@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--<?import com.gluonhq.charm.glisten.layout.MobileLayoutPane?>-->
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="address.view.LoginOverviewController">
+   <children>
+      <ImageView fitHeight="719.0" fitWidth="959.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <image>
+            <Image url="@../../../../../../Desktop/1.jpg" />
+         </image>
+      </ImageView>
+      <Pane layoutX="63.0" layoutY="176.0" prefHeight="370.0" prefWidth="403.0" style="-fx-background-color: #ffffff;" AnchorPane.bottomAnchor="174.0">
+         <children>
+            <JFXRadioButton layoutX="79.0" layoutY="164.0" text="Student" />
+            <JFXRadioButton layoutX="79.0" layoutY="196.0" text="Admin" />
+            <JFXRadioButton layoutX="230.0" layoutY="164.0" text="Faculty" />
+            <JFXButton fx:id="loginButton" buttonType="RAISED" layoutX="69.0" layoutY="257.0" onAction="#makeLogin" prefHeight="37.0" prefWidth="105.0" ripplerFill="WHITE" style="-fx-background-color: #2196F3;" text="Login" />
+            <!--<MobileLayoutPane layoutX="68.0" layoutY="123.0" />-->
+            <Pane layoutX="18.0" layoutY="25.0" prefHeight="120.0" prefWidth="373.0" style="-fx-background-color: #ccd5e0;">
+               <children>
+                  <JFXPasswordField fx:id="loginPassword" focusColor="#ccd5e0" layoutX="56.0" layoutY="68.0" prefHeight="37.0" prefWidth="262.0" promptText="Password" />
+                  <JFXTextField fx:id="loginUserName" focusColor="#09b6bc" layoutX="56.0" layoutY="14.0" prefHeight="37.0" prefWidth="262.0" promptText="Username" />
+               </children>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Pane>
+         </children>
+         <effect>
+            <DropShadow blurType="GAUSSIAN" />
+         </effect>
+      </Pane>
+      <Pane layoutX="521.0" layoutY="146.0" prefHeight="470.0" prefWidth="403.0" style="-fx-background-color: #ffffff;">
+         <children>
+            <Pane layoutX="18.0" layoutY="25.0" prefHeight="347.0" prefWidth="373.0" style="-fx-background-color: #ccd5e0;">
+               <children>
+                  <JFXPasswordField fx:id="loginPassword1" focusColor="#ccd5e0" layoutX="56.0" layoutY="152.0" prefHeight="37.0" prefWidth="262.0" promptText="Password" />
+                  <JFXTextField fx:id="loginUserName1" focusColor="#09b6bc" layoutX="56.0" layoutY="14.0" prefHeight="37.0" prefWidth="262.0" promptText="Username" />
+                  <JFXPasswordField fx:id="loginPassword11" focusColor="#ccd5e0" layoutX="56.0" layoutY="198.0" prefHeight="37.0" prefWidth="262.0" promptText="Re - Password" />
+                  <JFXTextField fx:id="loginUserName11" focusColor="#09b6bc" layoutX="56.0" layoutY="60.0" prefHeight="37.0" prefWidth="262.0" promptText="Full Name" />
+                  <JFXTextField fx:id="loginUserName111" focusColor="#09b6bc" layoutX="56.0" layoutY="106.0" prefHeight="37.0" prefWidth="262.0" promptText="Email ID" />
+                  <JFXRadioButton layoutX="56.0" layoutY="260.0" text="Student" />
+                  <JFXRadioButton layoutX="56.0" layoutY="290.0" text="Admin" />
+                  <JFXRadioButton layoutX="190.0" layoutY="260.0" text="Faculty" />
+               </children>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Pane>
+            <!--<JFXButton fx:id="loginButton" buttonType="RAISED" layoutX="114.0" layoutY="276.0" onAction="#loadSignup" prefHeight="37.0" prefWidth="105.0" ripplerFill="WHITE" style="-fx-background-color: #2196F3;" text="Login" />-->
+            <JFXButton fx:id="signUpButton" buttonType="RAISED" layoutX="69.0" layoutY="407.0" prefHeight="37.0" prefWidth="105.0" ripplerFill="WHITE" style="-fx-background-color: #2196F3;" text="Sign Up" />
+         </children>
+         <effect>
+            <DropShadow blurType="GAUSSIAN" />
+         </effect>
+      </Pane>
+   </children>
+</AnchorPane>
