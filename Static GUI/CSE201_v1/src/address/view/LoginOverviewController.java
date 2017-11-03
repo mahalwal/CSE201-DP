@@ -5,16 +5,16 @@
  */
 package address.view;
 
-import address.MainApp;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.layout.AnchorPane;
 
 /**
@@ -22,20 +22,29 @@ import javafx.scene.layout.AnchorPane;
  * @author Mahalwal's
  */
 public class LoginOverviewController {
-
+    
+    ObservableList<String> typeOfUserList = FXCollections.observableArrayList("Student","Faculty","Admin");
     @FXML
-    private JFXTextField loginUserName;
-    @FXML
-    private JFXPasswordField loginPassword;
-    @FXML
-    private JFXButton loginButton;
-    @FXML
-    private JFXButton signUpButton;
+    private AnchorPane loginRootPane;
 
 
 //    @FXML
-//    private void loadSignUp(ActionEvent event){
-//        
+//    private void initialize(){
+//        typeOfUser.setValue("Student");
+//        signUpTypeOfUser.setValue("Student");
+//        typeOfUser.setItems(typeOfUserList);
+//        signUpTypeOfUser.setItems(typeOfUserList);
 //    }
-    
+
+//    @FXML
+//    private void switchToStudentPage(ActionEvent event) throws IOException {
+//        AnchorPane pane = (AnchorPane)FXMLLoader.load(getClass().getResource("StudentLogin.fxml"));
+//        loginRootPane.getChildren().setAll(pane);
+//    }
+
+    @FXML
+    private void studPage(ActionEvent event)  throws IOException {
+        AnchorPane pane = (AnchorPane)FXMLLoader.load(getClass().getResource("StudentLogin.fxml"));
+        loginRootPane.getChildren().setAll(pane);
+    }
 }
