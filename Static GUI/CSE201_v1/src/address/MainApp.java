@@ -6,6 +6,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
+//import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
@@ -21,7 +22,6 @@ public class MainApp extends Application {
         this.primaryStage.setTitle("AddressApp");
 
         initRootLayout();
-
         showPersonOverview();
     }
 
@@ -51,10 +51,8 @@ public class MainApp extends Application {
         try {
             // Load person overview.
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(MainApp.class.getResource("view/loginOverview.fxml"));
-            StackPane personOverview = (StackPane) loader.load();
-
-            // Set person overview into the center of root layout.
+            loader.setLocation(MainApp.class.getResource("view/LoginOverview.fxml"));
+            AnchorPane personOverview = (AnchorPane) loader.load();
             rootLayout.setCenter(personOverview);
         } catch (IOException e) {
             e.printStackTrace();
