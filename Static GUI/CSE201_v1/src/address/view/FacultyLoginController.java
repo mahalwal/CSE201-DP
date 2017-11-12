@@ -19,19 +19,23 @@ import javafx.scene.layout.AnchorPane;
  *
  * @author Mahalwal's
  */
-public class StudentLoginController implements Initializable {
+public class FacultyLoginController implements Initializable {
+
     @FXML
-    private AnchorPane StudentLoginRootPane;
+    private AnchorPane facultyLoginRootPane;
+
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }
+    }    
+
     @FXML
-    private void switchToLoginPage(ActionEvent event) throws IOException {
+    private void exitToLoginPage(ActionEvent event) throws IOException {
         AnchorPane pane = (AnchorPane)FXMLLoader.load(getClass().getResource("LoginOverview.fxml"));
-        StudentLoginRootPane.getChildren().setAll(pane);
+        facultyLoginRootPane.getChildren().setAll(pane);
     }
+    
 }

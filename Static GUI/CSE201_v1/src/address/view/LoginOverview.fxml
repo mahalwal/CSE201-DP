@@ -34,7 +34,7 @@
                </effect>
             </Pane>
             <Button layoutX="204.0" layoutY="256.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="152.0" text="Forgot Password" />
-            <ChoiceBox fx:id="typeOfUser" layoutX="67.0" layoutY="186.0" prefWidth="150.0" />
+            <ChoiceBox fx:id="typeOfUser" layoutX="69.0" layoutY="177.0" prefWidth="150.0" />
          </children>
          <effect>
             <DropShadow blurType="GAUSSIAN" />
@@ -49,14 +49,14 @@
                   <JFXPasswordField fx:id="loginPassword11" focusColor="#ccd5e0" layoutX="56.0" layoutY="198.0" prefHeight="37.0" prefWidth="262.0" promptText="Re - Password" />
                   <JFXTextField fx:id="loginUserName11" focusColor="#09b6bc" layoutX="56.0" layoutY="60.0" prefHeight="37.0" prefWidth="262.0" promptText="Full Name" />
                   <JFXTextField fx:id="loginUserName111" focusColor="#09b6bc" layoutX="56.0" layoutY="106.0" prefHeight="37.0" prefWidth="262.0" promptText="Email ID" />
-                  <ChoiceBox fx:id="signUpTypeOfUser" layoutX="56.0" layoutY="264.0" prefWidth="150.0" />
+                  <ChoiceBox fx:id="typeOfUserSignUp" layoutX="56.0" layoutY="264.0" prefWidth="150.0" />
                </children>
                <effect>
                   <DropShadow />
                </effect>
             </Pane>
             <!--<JFXButton fx:id="loginButton" buttonType="RAISED" layoutX="114.0" layoutY="276.0" onAction="#loadSignup" prefHeight="37.0" prefWidth="105.0" ripplerFill="WHITE" style="-fx-background-color: #2196F3;" text="Login" />-->
-            <JFXButton fx:id="signUpButton" buttonType="RAISED" layoutX="69.0" layoutY="407.0" prefHeight="37.0" prefWidth="105.0" ripplerFill="WHITE" style="-fx-background-color: #2196F3;" text="Sign Up" />
+            <JFXButton fx:id="signUpButton" buttonType="RAISED" layoutX="50.0" layoutY="411.0" onAction="#sendEmail" prefHeight="37.0" prefWidth="105.0" ripplerFill="WHITE" style="-fx-background-color: #2196F3;" text="Sign Up" />
          </children>
          <effect>
             <DropShadow blurType="GAUSSIAN" />
