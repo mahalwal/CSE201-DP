@@ -1,5 +1,0 @@
--> Netbeans 8.2
--> JFoenix.jar import jar file to the current project
--> install scene builder from GLuon
--> run it using MainApp.java 
--> To update your repo with master branch `git pull origin master` 
