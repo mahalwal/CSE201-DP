@@ -17,7 +17,8 @@ public class Admin extends User{
         super(run, userCredential, currentCourses, timetable);
     }
     public ArrayList<String> getAvailableRooms(){
-        return currentCourses;
+//        return currentCourses;
+            return null;
     }
     
 }

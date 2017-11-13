@@ -81,7 +81,7 @@ public class LoginOverviewController {
         }
     }
     @FXML
-    private void sendEmail(ActionEvent event)  throws IOException {
+    private void sendEmail(ActionEvent event)  throws IOException, InterruptedException {
         javaMailAPI mailAPI = new javaMailAPI();
         String to = "manish16054@iiitd.ac.in";
         String []toID = {to};
@@ -90,6 +90,9 @@ public class LoginOverviewController {
         Parent root1 = (Parent) fxmlLoader.load();
         Stage stage = new Stage();
         stage.setScene(new Scene(root1)); 
+        stage.setResizable(false);
+        stage.setTitle("Verfiy OTP");
         stage.show();
+
     }
 }

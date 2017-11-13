@@ -24,7 +24,7 @@ public class AllRooms {
     }
     
     private void freeRoom(Room freeIt){
-        roomList
+        
     }
             
 }

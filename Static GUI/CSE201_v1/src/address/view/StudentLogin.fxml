@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXRadioButton?>
 <?import com.jfoenix.controls.JFXTimePicker?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
@@ -12,8 +11,6 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
@@ -56,16 +53,22 @@
                                                       <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                                                    </HBox.margin>
                                                 </Text>
-                                                <TextField prefHeight="32.0" prefWidth="392.0">
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Dummy" wrappingWidth="310.13670349121094">
+                                                   <font>
+                                                      <Font size="20.0" />
+                                                   </font>
                                                    <HBox.margin>
                                                       <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                                                    </HBox.margin>
-                                                </TextField>
-                                                <TextField prefHeight="33.0" prefWidth="508.0">
+                                                </Text>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Dummy" wrappingWidth="275.4700469970703">
+                                                   <font>
+                                                      <Font size="20.0" />
+                                                   </font>
                                                    <HBox.margin>
                                                       <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                                                    </HBox.margin>
-                                                </TextField>
+                                                </Text>
                                              </children>
                                           </HBox>
                                        </children>
@@ -80,11 +83,14 @@
                                                 <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                                              </HBox.margin>
                                           </Text>
-                                          <TextField prefHeight="32.0" prefWidth="721.0">
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Dummy" wrappingWidth="466.13673400878906">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
                                              <HBox.margin>
                                                 <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                                              </HBox.margin>
-                                          </TextField>
+                                          </Text>
                                        </children>
                                     </HBox>
                                  </children>
@@ -103,7 +109,7 @@
                                           </Text>
                                        </children>
                                     </HBox>
-                                    <HBox prefHeight="37.0" prefWidth="433.0">
+                                    <HBox prefHeight="64.0" prefWidth="940.0">
                                        <children>
                                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Name" wrappingWidth="199.4700469970703">
                                              <font>
@@ -115,12 +121,12 @@
                                           </Text>
                                           <HBox prefHeight="65.0" prefWidth="960.0">
                                              <children>
-                                                <TextField prefHeight="97.0" prefWidth="462.0" promptText="First Name">
+                                                <TextField prefHeight="44.0" prefWidth="349.0" promptText="First Name">
                                                    <HBox.margin>
                                                       <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                                                    </HBox.margin>
                                                 </TextField>
-                                                <TextField prefHeight="33.0" prefWidth="508.0" promptText="Last Name">
+                                                <TextField prefHeight="48.0" prefWidth="363.0" promptText="Last Name">
                                                    <HBox.margin>
                                                       <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                                                    </HBox.margin>
@@ -141,19 +147,19 @@
                                           </Text>
                                        </children>
                                     </HBox>
-                                    <HBox prefHeight="65.0" prefWidth="960.0">
+                                    <HBox prefHeight="65.0" prefWidth="940.0">
                                        <children>
-                                          <TextField prefHeight="34.0" prefWidth="440.0" promptText="Old Password">
+                                          <TextField prefHeight="44.0" prefWidth="358.0" promptText="Old Password">
                                              <HBox.margin>
                                                 <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                                              </HBox.margin>
                                           </TextField>
-                                          <TextField prefHeight="33.0" prefWidth="508.0" promptText="New Password">
+                                          <TextField prefHeight="44.0" prefWidth="330.0" promptText="New Password">
                                              <HBox.margin>
                                                 <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                                              </HBox.margin>
                                           </TextField>
-                                          <TextField prefHeight="34.0" prefWidth="440.0" promptText="Re-enter Password">
+                                          <TextField prefHeight="45.0" prefWidth="371.0" promptText="Re-enter Password">
                                              <HBox.margin>
                                                 <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                                              </HBox.margin>
@@ -185,11 +191,51 @@
             </Tab>
           <Tab text="Time Table">
                <content>
-                  <ImageView fitHeight="694.0" fitWidth="959.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../../../../../../Pictures/Screenshots/Screenshot%20(19).png" />
-                     </image>
-                  </ImageView>
+                  <VBox prefHeight="479.0" prefWidth="960.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Time Table" wrappingWidth="298.13672828674316">
+                           <font>
+                              <Font size="25.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </VBox.margin>
+                        </Text>
+                        <TableView fx:id="timeTableTable" prefHeight="492.0" prefWidth="940.0">
+                           <columns>
+                              <TableColumn fx:id="courseName" prefWidth="86.0" text="Course Name" />
+                              <TableColumn fx:id="code" prefWidth="60.33332824707031" text="Code" />
+                              <TableColumn fx:id="instructor" prefWidth="85.66667175292969" text="Instructor" />
+                              <TableColumn fx:id="monday" prefWidth="108.33334350585938" text="Monday" />
+                              <TableColumn fx:id="tuesday" prefWidth="80.33331298828125" text="Tuesday" />
+                              <TableColumn fx:id="wednesday" minWidth="8.333343505859375" prefWidth="91.66668701171875" text="Wednesday" />
+                              <TableColumn fx:id="thursday" prefWidth="105.0" text="Thursday" />
+                              <TableColumn fx:id="friday" prefWidth="96.0" text="Friday" />
+                              <TableColumn fx:id="lab" prefWidth="114.0" text="Lab" />
+                              <TableColumn fx:id="tut" prefWidth="109.0" text="Tutorial" />
+                           </columns>
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </VBox.margin>
+                        </TableView>
+                        <Button mnemonicParsing="false" prefHeight="42.0" prefWidth="135.0" text="Add Course">
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="20.0" layoutY="353.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="135.0" text="Remove Course">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </VBox.margin>
+                        </Button>
+                     </children>
+                  </VBox>
                </content></Tab>
             <Tab text="Book Room">
                <content>
@@ -265,19 +311,19 @@
                               </HBox>
                               <HBox prefHeight="37.0" prefWidth="491.0">
                                  <children>
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Book/Cancel" wrappingWidth="199.4700469970703">
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Book" wrappingWidth="199.4700469970703">
                                        <font>
                                           <Font size="16.0" />
                                        </font>
                                        <HBox.margin>
-                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                          <Insets bottom="5.0" left="10.0" right="5.0" top="5.0" />
                                        </HBox.margin>
                                     </Text>
-                                    <JFXRadioButton prefHeight="32.0" prefWidth="184.0">
+                                    <Button mnemonicParsing="false" prefHeight="44.0" prefWidth="129.0" text="Button">
                                        <HBox.margin>
-                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                        </HBox.margin>
-                                    </JFXRadioButton>
+                                    </Button>
                                  </children>
                               </HBox>
                               <HBox prefHeight="100.0" prefWidth="200.0">
@@ -286,6 +332,9 @@
                                        <font>
                                           <Font size="20.0" />
                                        </font>
+                                       <HBox.margin>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                       </HBox.margin>
                                     </TextArea>
                                  </children>
                               </HBox>
@@ -319,6 +368,7 @@
                                     <TableColumn prefWidth="111.0" text="Lab" />
                                     <TableColumn prefWidth="109.0" text="Lecture" />
                                     <TableColumn prefWidth="144.33331298828125" text="Tutorial" />
+                                    <TableColumn prefWidth="75.0" text="Pre Condition" />
                                  </columns>
                                  <VBox.margin>
                                     <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
@@ -371,7 +421,7 @@
                <content>
                   <AnchorPane>
                      <children>
-                        <VBox layoutX="142.0" layoutY="62.0" prefHeight="324.0" prefWidth="960.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                        <VBox layoutX="142.0" layoutY="62.0" prefHeight="589.0" prefWidth="960.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                            <children>
                               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Search by keyword" wrappingWidth="298.13672828674316">
                                  <font>
@@ -381,11 +431,20 @@
                                     <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                                  </VBox.margin>
                               </Text>
-                              <TextField prefHeight="41.0" prefWidth="856.0" promptText="Enter Keyword for Courses">
-                                 <VBox.margin>
-                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                                 </VBox.margin>
-                              </TextField>
+                              <HBox prefHeight="52.0" prefWidth="960.0">
+                                 <children>
+                                    <TextField prefHeight="46.0" prefWidth="648.0" promptText="Enter Keyword for Courses">
+                                       <HBox.margin>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                       </HBox.margin>
+                                    </TextField>
+                                    <Button mnemonicParsing="false" prefHeight="45.0" prefWidth="111.0" text="Search">
+                                       <HBox.margin>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                 </children>
+                              </HBox>
                               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="List of courses with the given keyword" wrappingWidth="431.47007179260254">
                                  <font>
                                     <Font size="25.0" />
