@@ -8,8 +8,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="197.0" prefWidth="315.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.141" fx:controller="address.view.SignUpPopUpWindowController">
+<AnchorPane id="AnchorPane" prefHeight="197.0" prefWidth="315.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="address.view.SignUpPopUpWindowController">
    <children>
       <VBox alignment="CENTER" prefHeight="238.0" prefWidth="315.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -23,7 +22,7 @@
             </Label>
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <JFXTextField prefHeight="43.0" prefWidth="203.0" promptText="Enter OTP">
+                  <JFXTextField fx:id="otpfield" prefHeight="43.0" prefWidth="203.0" promptText="Enter OTP">
                      <HBox.margin>
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                      </HBox.margin>
@@ -31,7 +30,7 @@
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                      </padding>
                   </JFXTextField>
-                  <Button mnemonicParsing="false" prefHeight="46.0" prefWidth="116.0" text="Enter">
+                  <Button mnemonicParsing="false" onAction="#checkOTP" prefHeight="46.0" prefWidth="116.0" text="Enter">
                      <HBox.margin>
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                      </HBox.margin>

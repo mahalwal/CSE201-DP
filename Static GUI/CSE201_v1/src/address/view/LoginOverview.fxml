@@ -44,11 +44,11 @@
          <children>
             <Pane layoutX="18.0" layoutY="25.0" prefHeight="347.0" prefWidth="373.0" style="-fx-background-color: #ccd5e0;">
                <children>
-                  <JFXPasswordField fx:id="loginPassword1" focusColor="#ccd5e0" layoutX="56.0" layoutY="152.0" prefHeight="37.0" prefWidth="262.0" promptText="Password" />
-                  <JFXTextField fx:id="loginUserName1" focusColor="#09b6bc" layoutX="56.0" layoutY="14.0" prefHeight="37.0" prefWidth="262.0" promptText="Username" />
-                  <JFXPasswordField fx:id="loginPassword11" focusColor="#ccd5e0" layoutX="56.0" layoutY="198.0" prefHeight="37.0" prefWidth="262.0" promptText="Re - Password" />
-                  <JFXTextField fx:id="loginUserName11" focusColor="#09b6bc" layoutX="56.0" layoutY="60.0" prefHeight="37.0" prefWidth="262.0" promptText="Full Name" />
-                  <JFXTextField fx:id="loginUserName111" focusColor="#09b6bc" layoutX="56.0" layoutY="106.0" prefHeight="37.0" prefWidth="262.0" promptText="Email ID" />
+                  <JFXPasswordField fx:id="password" focusColor="#ccd5e0" layoutX="56.0" layoutY="152.0" prefHeight="37.0" prefWidth="262.0" promptText="Password" />
+                  <JFXTextField fx:id="username" focusColor="#09b6bc" layoutX="56.0" layoutY="14.0" prefHeight="37.0" prefWidth="262.0" promptText="Username" />
+                  <JFXPasswordField fx:id="repassword" focusColor="#ccd5e0" layoutX="56.0" layoutY="198.0" prefHeight="37.0" prefWidth="262.0" promptText="Re - Password" />
+                  <JFXTextField fx:id="fullname" focusColor="#09b6bc" layoutX="56.0" layoutY="60.0" prefHeight="37.0" prefWidth="262.0" promptText="Full Name" />
+                  <JFXTextField fx:id="email" focusColor="#09b6bc" layoutX="56.0" layoutY="106.0" prefHeight="37.0" prefWidth="262.0" promptText="Email ID" />
                   <ChoiceBox fx:id="typeOfUserSignUp" layoutX="56.0" layoutY="264.0" prefWidth="150.0" />
                </children>
                <effect>

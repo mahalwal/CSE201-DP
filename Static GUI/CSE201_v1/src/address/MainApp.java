@@ -1,6 +1,8 @@
 package address;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -10,8 +12,17 @@ import javafx.stage.Stage;
 
 public class MainApp extends Application {
 
+    
+    public static ArrayList<newUser> listOfUser;
     private Stage primaryStage;
 
+    public static ArrayList<newUser> getListOfUser(){
+        if(listOfUser==null){
+            listOfUser = new ArrayList<newUser>();
+        }
+        return listOfUser;
+    }
+    
     @Override
     public void start(Stage primaryStage) {
         this.primaryStage = primaryStage;
