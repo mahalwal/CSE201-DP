@@ -4,7 +4,10 @@
  * and open the template in the editor.
  */
 package address.view;
-import address.Course;
+
+import address.*;
+import address.RequestRoomFromAdmin;
+import com.jfoenix.controls.JFXTimePicker;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -14,8 +17,11 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 
@@ -49,6 +55,20 @@ public class StudentLoginController implements Initializable {
     private TableColumn<Course, String> friday;
     @FXML
     private TableColumn<Course, String> lab;
+    @FXML
+    private TextField BookRoom_RoomNumber_StudentLogin;
+    @FXML
+    private TextField BookRoom_DesiredCapacity_StudentLogin1;
+    @FXML
+    private TextField BookRoom_DesiredCapacity_StudentLogin;
+    @FXML
+    private TextField BookRoom_StartTime_StudentLogin;
+    @FXML
+    private TextField BookRoom_EndTime_StudentLogin;
+    @FXML
+    private Button BookRoom_BookButton_StudentLogin;
+    @FXML
+    private TextArea BookRoom_Purpose_StudentLogin;
     
     
 //    ObservableList<String> tableData = FXCollections.observableArrayList();
@@ -56,7 +76,6 @@ public class StudentLoginController implements Initializable {
     /**
      * Initializes the controller class.
      */
-    @Override
     public void initialize(URL url, ResourceBundle rb) {
         courseName.setCellValueFactory(new PropertyValueFactory<Course, String>("name"));
         instructor.setCellValueFactory(new PropertyValueFactory<Course, String>("instructor"));
@@ -88,4 +107,31 @@ public class StudentLoginController implements Initializable {
 
         return tableData;
     }
+    
+    @FXML
+    private void onClickRequestRoomButtonFromStudent(ActionEvent event) {
+        RequestRoomFromAdmin fromStudent;
+        String roomNumber = BookRoom_RoomNumber_StudentLogin.getText();
+//        String
+        int desiredCapacity = Integer.parseInt(BookRoom_DesiredCapacity_StudentLogin.getText());
+        String startTime = BookRoom_StartTime_StudentLogin.getText();
+        String endTime = BookRoom_EndTime_StudentLogin.getText();
+//        boolean book;
+        String purpose = BookRoom_Purpose_StudentLogin.getText();
+        fromStudent= new RequestRoomFromAdmin(roomNumber, desiredCapacity, startTime, endTime, purpose);
+//        if(book){
+        newUser n1= new Student(null,null,null,"","","","","","");
+        Student thisStudent = (Student)n1;
+        thisStudent.getCurrentRequestOfRoomBooking().add(fromStudent);
+//            return "Booking request made Successfully";
+//        }
+//        else{
+//            if(onClickCancelPendingRequestFromStudent(fromStudent)){
+//                return "Cancelling Successful";
+//            }
+//            else{
+//                return "Cancelling Failed";
+//            }
+    }
 }
+

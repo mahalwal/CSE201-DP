@@ -8,18 +8,11 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.effect.DropShadow?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 
 <AnchorPane id="AnchorPane" fx:id="loginRootPane" prefHeight="720.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="address.view.LoginOverviewController">
    <children>
-      <ImageView fitHeight="723.0" fitWidth="858.0" layoutY="-4.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="102.0" AnchorPane.topAnchor="-4.0">
-         <image>
-            <Image url="@../../../../../../Desktop/1.jpg" />
-         </image>
-      </ImageView>
       <Pane layoutX="30.0" layoutY="176.0" prefHeight="403.0" prefWidth="436.0" style="-fx-background-color: #ffffff;" AnchorPane.bottomAnchor="174.0">
          <children>
             <JFXButton fx:id="loginButton" buttonType="RAISED" layoutX="69.0" layoutY="257.0" onAction="#studPage" prefHeight="37.0" prefWidth="105.0" ripplerFill="WHITE" style="-fx-background-color: #2196F3;" text="Login" />

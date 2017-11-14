@@ -18,7 +18,6 @@ public class Credential {
     public Credential(String name, String email, String password, String userType){
         this.name = name;
         this.email = new EmailAddress(email);
-//        this.email = email;
         this.password = password;
         this.userType = userType;
     }
