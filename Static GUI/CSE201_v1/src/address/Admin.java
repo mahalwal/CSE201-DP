@@ -11,14 +11,25 @@ import java.util.ArrayList;
  *
  * @author Madhav
  */
-public class Admin extends User{
+public class Admin extends newUser{
 
-    public Admin(MainApp run, Credential userCredential, ArrayList<String> currentCourses, TimeTable timetable) {
-        super(run, userCredential, currentCourses, timetable);
+    public ArrayList<RequestRoomFromAdmin> requestFromStudents;
+
+    public Admin(String username, String fullname, String email, String password, String repassword, String type) {
+        super(username, fullname, email, password, repassword, type);
+        requestFromStudents = new ArrayList<>();
     }
+    
+    
     public ArrayList<String> getAvailableRooms(){
-//        return currentCourses;
             return null;
+    }
+    
+    public void onClickRequestForRoomFromStudentLogin(String roomNumber, int desiredCapacity, String startTime, String endTime, boolean book, String purpose){
+        RequestRoomFromAdmin fromStudent;
+        fromStudent = new RequestRoomFromAdmin(roomNumber, desiredCapacity, startTime, endTime, purpose);
+        if(book)
+        requestFromStudents.add(fromStudent);
     }
     
 }

@@ -12,7 +12,8 @@ import java.util.ArrayList;
  * @author Madhav
  */
 public class Course {
-    public String name, time, acronym, instructor, mandatoryElective, credits, code, monday, tuesday, wednesday, thurdsday, friday, tut, lab, preConditions, postConditions;
+    public String name,room,time, acronym, instructor, mandatoryElective, credits, code, monday, tuesday, wednesday, thurdsday, friday, tut, lab, preConditions, postConditions;
+    //room to be addded
 //    private DetailsOfCourse CourseDetails;
 //    private ArrayList<String> postConditions;
 //    private ArrayList<String> preRequisites;

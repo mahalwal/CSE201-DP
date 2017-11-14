@@ -5,6 +5,8 @@
  */
 package address;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Madhav
@@ -12,14 +14,19 @@ package address;
 public class Room {
     private String roomNumber;
     private int capacity;
-    private boolean occupied;
-    private Time time;
+    private ArrayList<Time> roomBusyTime;
     //Room Availability will change from Time to Time
-    public Room(String roomNumber, int capacity, boolean occupied, Time time){
+    public Room(String roomNumber, int capacity){
         this.roomNumber = roomNumber;
         this.capacity = capacity;
-        this.occupied = occupied;
-        this.time = time;
+        roomBusyTime = new ArrayList<Time>();
     }
-    
+    public void bookRoomForGivenTime(Time time){
+        roomBusyTime.add(time);
+    }
+    public boolean isAvailableAtGivenTime(Time time){
+        if(roomBusyTime.contains(time))
+            return false;
+        return true;
+    }
 }

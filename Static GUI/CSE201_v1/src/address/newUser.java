@@ -15,7 +15,7 @@ import java.util.Objects;
  */
 public class newUser implements Serializable{
     public String username, fullname, password, repassword, email, type;
-
+    
     public newUser(String username, String fullname, String email, String password, String repassword, String type) {
         this.username = username;
         this.fullname = fullname;

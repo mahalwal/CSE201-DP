@@ -11,20 +11,47 @@ import java.util.ArrayList;
  *
  * @author Madhav
  */
+
 public class AllRooms {
     private ArrayList<Room> roomList;
-    private ArrayList<Room> busyRooms;
-    private ArrayList<Room> availableRooms;
-    private ArrayList<Room> getAvailableRooms(){
-        return availableRooms;
-    }
-    private void addRoom(Room addIt){
-        roomList.add(addIt);
-        availableRooms.remove(addIt);
+    private ArrayList<RoomTime> busyRooms;
+//    private ArrayList<RoomTime> availableRooms;
+
+    public AllRooms() {
+        roomList = new ArrayList<>();
+        busyRooms = new ArrayList<>();
+//        availableRooms = new ArrayList<>();
     }
     
-    private void freeRoom(Room freeIt){
-        
+    //getAvailableRooms at given time
+    public ArrayList<Room> getAvailableRooms(Time time){
+        ArrayList<Room> returnAvailableRooms = new ArrayList<>();
+        for (Room roomIterator : roomList) {
+            if(roomIterator.isAvailableAtGivenTime(time)){
+                returnAvailableRooms.add(roomIterator);
+            }
+        }
+        return returnAvailableRooms;
     }
-            
+    
+    //check any room availability at any given time
+    public boolean checkRoomAvailabilty(Room room, Time time){
+        return room.isAvailableAtGivenTime(time);
+    }
+    
+    
+    public boolean bookRoom(Room room, Time time){
+        if(checkRoomAvailabilty(room, time)){
+            RoomTime roomWithGivenTime = new RoomTime(room, time);
+            busyRooms.add(roomWithGivenTime);
+        }
+        return false;
+    }
+    
+    
+    public boolean freeRoom(Room room, Time time){
+        RoomTime freeRoomWithGivenTime = new RoomTime(room, time);
+        busyRooms.remove(freeRoomWithGivenTime);
+        return true;
+    }
 }
