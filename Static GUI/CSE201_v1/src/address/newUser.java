@@ -15,6 +15,13 @@ import java.util.Objects;
  */
 public class newUser implements Serializable{
     public String username, fullname, password, repassword, email, type;
+    public static AllCourses allCourses;
+    public static ArrayList<Course> currentCourses;
+    public static ArrayList<RequestRoomFromAdmin> currentRequestOfRoomBooking;
+    public static ArrayList<Course> listThatMatchGivenKeyword;
+    public static ArrayList<RequestRoomFromAdmin> requestFromStudents;
+    public static AllRooms allRooms;
+    
     
     public newUser(String username, String fullname, String email, String password, String repassword, String type) {
         this.username = username;

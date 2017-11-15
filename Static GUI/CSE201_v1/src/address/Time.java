@@ -10,8 +10,8 @@ package address;
  * @author Madhav
  */
 public class Time {
-    private String startTime;
-    private String endTime;
+    private String startTime; //HH-MM
+    private String endTime;   
     
     public Time(String start, String end) {
         startTime = start;

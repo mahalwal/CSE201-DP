@@ -13,10 +13,10 @@ import java.util.ArrayList;
  */
 
 public class AllRooms {
-    private ArrayList<Room> roomList;
-    private ArrayList<RoomTime> busyRooms;
+    public static ArrayList<Room> roomList;
+    public static ArrayList<RoomTime> busyRooms;
 //    private ArrayList<RoomTime> availableRooms;
-
+    
     public AllRooms() {
         roomList = new ArrayList<>();
         busyRooms = new ArrayList<>();
@@ -24,8 +24,8 @@ public class AllRooms {
     }
     
     //getAvailableRooms at given time
-    public ArrayList<Room> getAvailableRooms(Time time){
-        ArrayList<Room> returnAvailableRooms = new ArrayList<>();
+    public static ObservableList<Room> getAvailableRooms(Time time){
+        ObservableList<Room> returnAvailableRooms = javafx.collections.ObservableList<>();
         for (Room roomIterator : roomList) {
             if(roomIterator.isAvailableAtGivenTime(time)){
                 returnAvailableRooms.add(roomIterator);

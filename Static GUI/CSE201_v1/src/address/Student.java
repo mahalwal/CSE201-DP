@@ -13,10 +13,7 @@ import java.util.ArrayList;
  */
 public class Student extends newUser{
 //    private String password;
-    private AllCourses allCourses;
-    private ArrayList<Course> currentCourses;
-    private ArrayList<RequestRoomFromAdmin> currentRequestOfRoomBooking;
-    private ArrayList<Course> listThatMatchGivenKeyword;
+    
 //    public Student( Credential userCredential, ArrayList<String> currentCourses, TimeTable timetable) {
 //        super( userCredential, currentCourses, timetable);
 //        currentCourses = new ArrayList<>();

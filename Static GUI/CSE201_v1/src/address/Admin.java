@@ -13,7 +13,6 @@ import java.util.ArrayList;
  */
 public class Admin extends newUser{
 
-    public ArrayList<RequestRoomFromAdmin> requestFromStudents;
 
     public Admin(String username, String fullname, String email, String password, String repassword, String type) {
         super(username, fullname, email, password, repassword, type);
