@@ -10,8 +10,8 @@ package address;
  * @author Madhav
  */
 public class RoomTime {
-    private Room room;
-    private Time time;
+    public Room room;
+    public Time time;
     
     public RoomTime(Room room, Time time) {
         this.room = room;

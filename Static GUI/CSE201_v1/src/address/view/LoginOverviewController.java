@@ -63,7 +63,7 @@ public class LoginOverviewController {
     private void initialize() throws IOException, ClassNotFoundException{
         storeRetrieveUserData storeRetrieveUserData1 = new storeRetrieveUserData();
         storeRetrieveUserData1.desearialize("newuser"); 
-        
+        System.out.println("COMING");
         for(newUser u: MainApp.getListOfUser())
         {
             System.out.println(u);
@@ -72,6 +72,14 @@ public class LoginOverviewController {
         typeOfUser.setItems(typeOfUserList);
         typeOfUserSignUp.setValue("Student");
         typeOfUserSignUp.setItems(typeOfUserList);
+        String inpUserName = username.getText();
+        String iFullName = fullname.getText();
+        String iEmail = email.getText();
+        String iPassword = password.getText();
+        String iRePassword = repassword.getText();
+        String iTypeOfUserSignUp = typeOfUserSignUp.getValue();
+        System.out.println("working");
+        newuser = new newUser(inpUserName, iFullName, iEmail, iPassword, iRePassword, iTypeOfUserSignUp);
     }
     public newUser getNewUser(){
         return newuser;
@@ -82,7 +90,7 @@ public class LoginOverviewController {
         String currentChoiceBoxValue = typeOfUser.getValue();
         String loginusername = loginUserName.getText();
         String loginpassword = loginPassword.getText();
-        if(!validation1(loginusername, loginpassword, currentChoiceBoxValue))
+        if(validation1(loginusername, loginpassword, currentChoiceBoxValue))  //CHANGED !
         {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fillAllFields.fxml"));
             Parent root1 = (Parent) fxmlLoader.load();
@@ -132,9 +140,11 @@ public class LoginOverviewController {
         String iPassword = password.getText();
         String iRePassword = repassword.getText();
         String iTypeOfUserSignUp = typeOfUserSignUp.getValue();
+        System.out.println("working");
+        newuser = new newUser(inpUserName, iFullName, iEmail, iPassword, iRePassword, "S");
         System.out.println(inpUserName+" "+iFullName+" "+iTypeOfUserSignUp);
-        if(validation(inpUserName, iFullName, iEmail, iPassword, iRePassword, iTypeOfUserSignUp)){
-            
+        if(!validation(inpUserName, iFullName, iEmail, iPassword, iRePassword, iTypeOfUserSignUp)){//CHANGED !
+            System.out.println("NEW USER ON THE WAY");
             newuser = new newUser(inpUserName, iFullName, iEmail, iPassword, iRePassword, iTypeOfUserSignUp);
             storeRetrieveUserData storeRetrieveUserData1 = new storeRetrieveUserData();
             MainApp.getListOfUser().add(newuser);
@@ -184,6 +194,7 @@ public class LoginOverviewController {
             return false;
         }
         else{
+            
             for(newUser u: MainApp.listOfUser){
                 if(u.username.equals(username1) && u.password.equals(password1) && u.type.equals(type1)){
                     System.out.println("found");
