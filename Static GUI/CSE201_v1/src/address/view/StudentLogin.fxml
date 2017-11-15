@@ -165,10 +165,10 @@
                   <AnchorPane>
                      <children>
                         <ListView layoutX="-14.0" prefHeight="681.0" prefWidth="960.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="0.0" />
-                        <TableView layoutX="121.0" layoutY="104.0" prefHeight="188.0" prefWidth="794.0" AnchorPane.leftAnchor="121.0">
+                        <TableView fx:id="AvailableRoomsTable" layoutX="121.0" layoutY="104.0" prefHeight="188.0" prefWidth="794.0" AnchorPane.leftAnchor="121.0">
                            <columns>
-                              <TableColumn prefWidth="111.0" text="Room Number" />
-                              <TableColumn prefWidth="144.33331298828125" text="Capacity" />
+                              <TableColumn fx:id="AvailableRoomsRoomNumber" prefWidth="111.0" text="Room Number" />
+                              <TableColumn fx:id="AvailableRoomsCapacity" prefWidth="144.33331298828125" text="Capacity" />
                            </columns>
                         </TableView>
                         <VBox layoutX="71.0" layoutY="323.0" prefHeight="324.0" prefWidth="470.0" AnchorPane.leftAnchor="121.0">
@@ -190,7 +190,7 @@
                                     <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                                  </VBox.margin>
                               </TextField>
-                              <TextField fx:id="BookRoom_DesiredCapacity_StudentLogin1" prefHeight="25.0" prefWidth="432.0" promptText="Desired Capacity">
+                              <TextField fx:id="BookRoom_DesiredCapacity_StudentLogin" prefHeight="25.0" prefWidth="432.0" promptText="Desired Capacity">
                                  <VBox.margin>
                                     <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                                  </VBox.margin>
@@ -207,7 +207,7 @@
                               </TextField>
                               <HBox prefHeight="37.0" prefWidth="433.0">
                                  <children>
-                                    <TextField fx:id="BookRoom_DesiredCapacity_StudentLogin" prefHeight="25.0" prefWidth="432.0" promptText="Current Date : DD-MM-YY">
+                                    <TextField fx:id="BookRoom_Date_StudentLogin" prefHeight="25.0" prefWidth="432.0" promptText="Current Date : DD-MM-YY">
                                        <HBox.margin>
                                           <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                                        </HBox.margin>
@@ -217,14 +217,6 @@
                               <HBox layoutX="10.0" layoutY="93.0" prefHeight="52.0" prefWidth="597.0" />
                               <HBox prefHeight="37.0" prefWidth="491.0">
                                  <children>
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Book" wrappingWidth="199.4700469970703">
-                                       <font>
-                                          <Font size="16.0" />
-                                       </font>
-                                       <HBox.margin>
-                                          <Insets bottom="5.0" left="10.0" right="5.0" top="5.0" />
-                                       </HBox.margin>
-                                    </Text>
                                     <Button fx:id="BookRoom_BookButton_StudentLogin" mnemonicParsing="false" onAction="#onClickRequestRoomButtonFromStudent" prefHeight="44.0" prefWidth="129.0" text="Book">
                                        <HBox.margin>
                                           <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -232,18 +224,7 @@
                                     </Button>
                                  </children>
                               </HBox>
-                              <HBox prefHeight="100.0" prefWidth="200.0">
-                                 <children>
-                                    <TextArea fx:id="BookRoom_Purpose_StudentLogin" prefHeight="58.0" prefWidth="490.0" promptText="Purpose">
-                                       <font>
-                                          <Font size="20.0" />
-                                       </font>
-                                       <HBox.margin>
-                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                                       </HBox.margin>
-                                    </TextArea>
-                                 </children>
-                              </HBox>
+                              <HBox prefHeight="100.0" prefWidth="200.0" />
                            </children>
                         </VBox>
                         <Text layoutX="139.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Available Rooms" wrappingWidth="298.13672828674316" AnchorPane.leftAnchor="121.0">
@@ -254,6 +235,11 @@
                         <TextField fx:id="DisplayRooms_StartTime_StudentLogin" layoutX="34.0" layoutY="5.0" prefHeight="25.0" prefWidth="432.0" promptText="Start Time : HH - MM (24 hour)" />
                         <TextField fx:id="DisplayRoom_EndTime_StudentLogin" layoutX="480.0" layoutY="5.0" prefHeight="25.0" prefWidth="432.0" promptText="End Time : HH - MM (24 hour)" />
                         <Button fx:id="ShowRoom_BookButton_StudentLogin" layoutX="734.0" layoutY="292.0" mnemonicParsing="false" onAction="#onClickShowRoomButtonFromStudent" prefHeight="44.0" prefWidth="129.0" text="Show" />
+                        <TextArea fx:id="BookRoom_Purpose_StudentLogin" layoutX="644.0" layoutY="428.0" prefHeight="171.0" prefWidth="270.0" promptText="Purpose">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </TextArea>
                      </children>
                   </AnchorPane>
                </content>

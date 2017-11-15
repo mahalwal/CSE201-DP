@@ -24,12 +24,20 @@ public class newUser implements Serializable{
     
     
     public newUser(String username, String fullname, String email, String password, String repassword, String type) {
+        System.out.println("NEW USER CREATED");
         this.username = username;
         this.fullname = fullname;
         this.password = password;
         this.repassword = repassword;
         this.email = email;
         this.type = type;
+        allCourses = new AllCourses();
+        currentCourses = new ArrayList<>();
+        currentRequestOfRoomBooking = new ArrayList<>();
+        listThatMatchGivenKeyword = new ArrayList<>();
+        requestFromStudents = new ArrayList<>();
+        allRooms = new AllRooms();
+
     }
 
     @Override

@@ -70,8 +70,6 @@ public class StudentLoginController implements Initializable {
     @FXML
     private TextField BookRoom_RoomNumber_StudentLogin;
     @FXML
-    private TextField BookRoom_DesiredCapacity_StudentLogin1;
-    @FXML
     private TextField BookRoom_DesiredCapacity_StudentLogin;
     @FXML
     private TextField BookRoom_StartTime_StudentLogin;
@@ -141,6 +139,14 @@ public class StudentLoginController implements Initializable {
     private TextField DisplayRoom_EndTime_StudentLogin;
     @FXML
     private Button ShowRoom_BookButton_StudentLogin;
+    @FXML
+    private TableView<Room> AvailableRoomsTable;
+    @FXML
+    private TableColumn<Room, String> AvailableRoomsRoomNumber = new TableColumn<>();
+    @FXML
+    private TableColumn<Room, Integer> AvailableRoomsCapacity = new TableColumn<>();
+    @FXML
+    private TextField BookRoom_Date_StudentLogin;
     
     
 //    ObservableList<String> tableData = FXCollections.observableArrayList();
@@ -241,29 +247,39 @@ public class StudentLoginController implements Initializable {
     }
     
     @FXML
-    private void onClickRequestRoomButtonFromStudent(ActionEvent event) {
+    private void onClickRequestRoomButtonFromStudent(ActionEvent event)throws IOException {
+        System.out.println("book pressed");
+        for (Room course : newUser.allRooms.roomList) {
+            System.out.print(course.roomNumber+" ");
+            for(Time t:course.roomBusyTime){
+                System.out.print(t.getStartTime()+" "+t.getEndTime());
+            }
+            System.out.println();
+        }
         RequestRoomFromAdmin fromStudent;
         String roomNumber = BookRoom_RoomNumber_StudentLogin.getText();
-//        String
+        System.out.println(BookRoom_DesiredCapacity_StudentLogin.getText()+ "  capcity");
         int desiredCapacity = Integer.parseInt(BookRoom_DesiredCapacity_StudentLogin.getText());
         String startTime = BookRoom_StartTime_StudentLogin.getText();
         String endTime = BookRoom_EndTime_StudentLogin.getText();
-//        boolean book;
         String purpose = BookRoom_Purpose_StudentLogin.getText();
         fromStudent= new RequestRoomFromAdmin(roomNumber, desiredCapacity, startTime, endTime, purpose);
-//        if(book){
-        newUser n1= new Student(null,null,null,"","","","","","");
-        Student thisStudent = (Student)n1;
-        thisStudent.getCurrentRequestOfRoomBooking().add(fromStudent);
-//            return "Booking request made Successfully";
-//        }
-//        else{
-//            if(onClickCancelPendingRequestFromStudent(fromStudent)){
-//                return "Cancelling Successful";
-//            }
-//            else{
-//                return "Cancelling Failed";
-//            }
+//        newUser n1= new Student(null,null,null,"","","","","","");
+//        Student thisStudent = (Student)n1;
+//        thisStudent.getCurrentRequestOfRoomBooking().add(fromStudent);
+        newUser.currentRequestOfRoomBooking.add(fromStudent);
+        Time bookTime = new Time(startTime, endTime);
+        Room bookRoom = new Room(roomNumber, desiredCapacity);
+        RoomTime roomBooked = new RoomTime(bookRoom, bookTime);
+        bookRoom.roomBusyTime.add(bookTime);
+        for (Time t  : bookRoom.roomBusyTime) {
+            System.out.println(t.getStartTime());
+        }
+        newUser.allRooms.busyRooms.add(roomBooked);
+        for (RoomTime roomTime:newUser.allRooms.busyRooms) {
+            System.out.println("Room  " + roomTime.room+"  booked");
+        }
+        System.out.println("book leaved");
     }
 
     @FXML
@@ -293,6 +309,7 @@ public class StudentLoginController implements Initializable {
 
     @FXML
     private void allCoursesAddCourseButton(ActionEvent event) throws IOException {
+        System.out.println("add course");
         String iallCoursesCourseCodeEnter = allCoursesCourseCodeEnter.getText();
         if(iallCoursesCourseCodeEnter.trim().isEmpty())
         {
@@ -366,21 +383,36 @@ public class StudentLoginController implements Initializable {
         }
     }
 
-    private ObservableList<Room> getFreeRoomAtThisTime(Time time){
-        ObservableList<Room> listThatContainsRoom = FXCollections.observableArrayList();
-        for (Room iteratorRoom : newUser.allRooms.roomList) {
-            
-        }
-        return listThatContainsRoom;
-    }
+//    private ObservableList<Room> getFreeRoomAtThisTime(Time time){
+//        ObservableList<Room> listThatContainsRoom = FXCollections.observableArrayList();
+//        for (Room iteratorRoom : newUser.allRooms.roomList) {
+//            
+//        }
+//        return listThatContainsRoom;
+//    }
     @FXML
     private void onClickShowRoomButtonFromStudent(ActionEvent event) {
         String startTime = DisplayRooms_StartTime_StudentLogin.getText();
         String endTime  = DisplayRoom_EndTime_StudentLogin.getText();
+//        System.out.println(startTime);
         Time needRoomForThisTime = new Time(startTime, endTime);
+//        System.out.println("in show");
+//        Time tmeo = new Time("22:30", "23:30");
+//        System.out.println("success");
+//        boolean x = needRoomForThisTime.checkClash(tmeo);
+//        if(x)
+//            System.out.println("yes");
+//        System.out.println("no");
         ObservableList<Room> displayRoomByGivenTime = FXCollections.observableArrayList();
-        displayRoomByGivenTime = getFreeRoomAtThisTime(needRoomForThisTime);
-        
+        displayRoomByGivenTime = newUser.allRooms.getAvailableRooms(needRoomForThisTime);
+        for (Room room : displayRoomByGivenTime) {
+            System.out.println(room.roomNumber);
+
+        }
+//        AvailableRoomsRoomNumber.setCellFactory();
+//        AvailableRoomsCapacity.setCellFactory(new PropertyValueFactory<>("Capacity"));
+//        AvailableRoomsTable.setItems(displayRoomByGivenTime);
+
     }
 }
 

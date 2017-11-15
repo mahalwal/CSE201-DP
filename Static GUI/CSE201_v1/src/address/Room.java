@@ -12,10 +12,11 @@ import java.util.ArrayList;
  * @author Madhav
  */
 public class Room {
-    private String roomNumber;
-    private int capacity;
-    private ArrayList<Time> roomBusyTime;
+    public String roomNumber;
+    public int capacity;
+    public ArrayList<Time> roomBusyTime;
     //Room Availability will change from Time to Time
+    
     public Room(String roomNumber, int capacity){
         this.roomNumber = roomNumber;
         this.capacity = capacity;

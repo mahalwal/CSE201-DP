@@ -6,6 +6,8 @@
 package address;
 
 import java.util.ArrayList;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 /**
  *
@@ -18,15 +20,30 @@ public class AllRooms {
 //    private ArrayList<RoomTime> availableRooms;
     
     public AllRooms() {
-        roomList = new ArrayList<>();
+        roomList = new ArrayList<Room>();
+        Room C01 = new Room("C01", 100);roomList.add(C01);
+        Room C02 = new Room("C02", 20);roomList.add(C02);
+        Room C03 = new Room("C03", 20);roomList.add(C03);
+        Room C04 = new Room("C04", 20);roomList.add(C04);
+        Room C11 = new Room("C11", 100);roomList.add(C11);
+        Room C12 = new Room("C12", 20);roomList.add(C12);
+        Room C13 = new Room("C23", 20);roomList.add(C13);
+        Room C14 = new Room("C24", 20);roomList.add(C14);
+        Room C21 = new Room("C21", 100);roomList.add(C21);
+        Room C22 = new Room("C22", 20);roomList.add(C22);
+        Room C23 = new Room("C23", 20);roomList.add(C23);
+        Room C24 = new Room("C24", 20);roomList.add(C24);
+        
         busyRooms = new ArrayList<>();
 //        availableRooms = new ArrayList<>();
     }
     
     //getAvailableRooms at given time
     public static ObservableList<Room> getAvailableRooms(Time time){
-        ObservableList<Room> returnAvailableRooms = javafx.collections.ObservableList<>();
+        ObservableList<Room> returnAvailableRooms = FXCollections.observableArrayList();
+        
         for (Room roomIterator : roomList) {
+//            System.out.println(roomIterator.roomNumber);
             if(roomIterator.isAvailableAtGivenTime(time)){
                 returnAvailableRooms.add(roomIterator);
             }
