@@ -216,22 +216,23 @@
                               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                            </VBox.margin>
                         </TableView>
-                        <Button mnemonicParsing="false" prefHeight="42.0" prefWidth="135.0" text="Add Course">
-                           <VBox.margin>
-                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                           </VBox.margin>
-                           <font>
-                              <Font size="13.0" />
-                           </font>
-                        </Button>
-                        <Button layoutX="20.0" layoutY="353.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="135.0" text="Remove Course">
-                           <font>
-                              <Font size="13.0" />
-                           </font>
-                           <VBox.margin>
-                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                           </VBox.margin>
-                        </Button>
+                        <HBox prefHeight="64.0" prefWidth="960.0">
+                           <children>
+                              <TextField fx:id="personalTimeTableRemoveCode" prefHeight="44.0" prefWidth="114.0" promptText="Enter CODE">
+                                 <HBox.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </HBox.margin>
+                              </TextField>
+                              <Button mnemonicParsing="false" onAction="#personalTimeTableRemoveButton" prefHeight="44.0" prefWidth="155.0" text="Remove Course">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </HBox.margin>
+                              </Button>
+                           </children>
+                        </HBox>
                      </children>
                   </VBox>
                </content></Tab>
@@ -305,7 +306,7 @@
                                           <Insets bottom="5.0" left="10.0" right="5.0" top="5.0" />
                                        </HBox.margin>
                                     </Text>
-                                    <Button fx:id="BookRoom_BookButton_StudentLogin" mnemonicParsing="false" onAction="#onClickRequestRoomButtonFromStudent" prefHeight="44.0" prefWidth="129.0" text="Button">
+                                    <Button fx:id="BookRoom_BookButton_StudentLogin" mnemonicParsing="false" onAction="#onClickRequestRoomButtonFromStudent" prefHeight="44.0" prefWidth="129.0" text="Book">
                                        <HBox.margin>
                                           <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                        </HBox.margin>
@@ -326,6 +327,11 @@
                               </HBox>
                            </children>
                         </VBox>
+                        <Text layoutX="139.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Available Rooms" wrappingWidth="298.13672828674316" AnchorPane.leftAnchor="121.0">
+                           <font>
+                              <Font size="25.0" />
+                           </font>
+                        </Text>
                      </children>
                   </AnchorPane>
                </content>
@@ -335,7 +341,7 @@
                   <AnchorPane>
                      <children>
                         <ListView prefHeight="681.0" prefWidth="960.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-                        <VBox layoutX="10.0" layoutY="69.0" prefHeight="479.0" prefWidth="960.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                        <VBox layoutX="10.0" layoutY="5.0" prefHeight="683.0" prefWidth="960.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                            <children>
                               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="All courses" wrappingWidth="298.13672828674316">
                                  <font>
@@ -345,59 +351,41 @@
                                     <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                                  </VBox.margin>
                               </Text>
-                              <TableView prefHeight="188.0" prefWidth="940.0">
+                              <TableView fx:id="allCoursesTable" prefHeight="466.0" prefWidth="940.0">
                                  <columns>
-                                    <TableColumn prefWidth="92.33332824707031" text="S.No." />
-                                    <TableColumn prefWidth="88.0" text="Course Name" />
-                                    <TableColumn prefWidth="123.0" text="Code" />
-                                    <TableColumn prefWidth="123.33331298828125" text="Instructor" />
-                                    <TableColumn prefWidth="111.0" text="Lab" />
-                                    <TableColumn prefWidth="109.0" text="Lecture" />
-                                    <TableColumn prefWidth="144.33331298828125" text="Tutorial" />
-                                    <TableColumn prefWidth="75.0" text="Pre Condition" />
+                                    <TableColumn fx:id="courseName1" prefWidth="86.0" text="Course Name" />
+                                    <TableColumn fx:id="code1" prefWidth="60.33332824707031" text="Code" />
+                                    <TableColumn fx:id="instructor1" prefWidth="85.66667175292969" text="Instructor" />
+                                    <TableColumn fx:id="monday1" prefWidth="108.33334350585938" text="Monday" />
+                                    <TableColumn fx:id="tuesday1" prefWidth="80.33331298828125" text="Tuesday" />
+                                    <TableColumn fx:id="wednesday1" minWidth="8.333343505859375" prefWidth="91.66668701171875" text="Wednesday" />
+                                    <TableColumn fx:id="thursday1" prefWidth="105.0" text="Thursday" />
+                                    <TableColumn fx:id="friday1" prefWidth="96.0" text="Friday" />
+                                    <TableColumn fx:id="lab1" prefWidth="114.0" text="Lab" />
+                                    <TableColumn fx:id="tut1" prefWidth="109.0" text="Tutorial" />
                                  </columns>
                                  <VBox.margin>
                                     <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                                  </VBox.margin>
                               </TableView>
-                              <Button mnemonicParsing="false" prefHeight="42.0" prefWidth="135.0" text="Add Course">
-                                 <VBox.margin>
-                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                                 </VBox.margin>
-                                 <font>
-                                    <Font size="13.0" />
-                                 </font>
-                              </Button>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Student Courses" wrappingWidth="298.13672828674316">
-                                 <font>
-                                    <Font size="25.0" />
-                                 </font>
-                                 <VBox.margin>
-                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                                 </VBox.margin>
-                              </Text>
-                              <TableView prefHeight="201.0" prefWidth="960.0">
-                                 <columns>
-                                    <TableColumn prefWidth="92.33332824707031" text="S.No." />
-                                    <TableColumn prefWidth="88.0" text="Room No." />
-                                    <TableColumn prefWidth="123.0" text="Occupancy" />
-                                    <TableColumn prefWidth="123.33331298828125" text="Course Name" />
-                                    <TableColumn prefWidth="111.0" text="Capacity" />
-                                    <TableColumn prefWidth="109.0" text="Room No." />
-                                    <TableColumn prefWidth="144.33331298828125" text="Room No." />
-                                 </columns>
-                                 <VBox.margin>
-                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                                 </VBox.margin>
-                              </TableView>
-                              <Button layoutX="20.0" layoutY="353.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="135.0" text="Remove Course">
-                                 <font>
-                                    <Font size="13.0" />
-                                 </font>
-                                 <VBox.margin>
-                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                                 </VBox.margin>
-                              </Button>
+                              <HBox prefHeight="64.0" prefWidth="960.0">
+                                 <children>
+                                    <TextField fx:id="allCoursesCourseCodeEnter" prefHeight="44.0" prefWidth="114.0" promptText="Enter CODE">
+                                       <HBox.margin>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                       </HBox.margin>
+                                    </TextField>
+                                    <Button mnemonicParsing="false" onAction="#allCoursesAddCourseButton" prefHeight="44.0" prefWidth="155.0" text="Add Course">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="64.0" prefWidth="960.0" />
                            </children>
                         </VBox>
                      </children>
@@ -407,7 +395,7 @@
                <content>
                   <AnchorPane>
                      <children>
-                        <VBox layoutX="142.0" layoutY="62.0" prefHeight="589.0" prefWidth="960.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                        <VBox layoutX="142.0" layoutY="2.0" prefHeight="688.0" prefWidth="960.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                            <children>
                               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Search by keyword" wrappingWidth="298.13672828674316">
                                  <font>
@@ -419,12 +407,12 @@
                               </Text>
                               <HBox prefHeight="52.0" prefWidth="960.0">
                                  <children>
-                                    <TextField prefHeight="46.0" prefWidth="648.0" promptText="Enter Keyword for Courses">
+                                    <TextField fx:id="keywordInput" prefHeight="46.0" prefWidth="648.0" promptText="Enter Keyword for Courses">
                                        <HBox.margin>
                                           <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                                        </HBox.margin>
                                     </TextField>
-                                    <Button mnemonicParsing="false" prefHeight="45.0" prefWidth="111.0" text="Search">
+                                    <Button fx:id="searchKeywordButton" mnemonicParsing="false" onAction="#searchKeywordButtonShow" prefHeight="45.0" prefWidth="111.0" text="Search">
                                        <HBox.margin>
                                           <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                                        </HBox.margin>
@@ -439,37 +427,37 @@
                                     <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                                  </VBox.margin>
                               </Text>
-                              <TableView prefHeight="188.0" prefWidth="940.0">
+                              <TableView fx:id="searchKeywordTable" prefHeight="405.0" prefWidth="960.0">
                                  <columns>
-                                    <TableColumn prefWidth="92.33332824707031" text="S.No." />
-                                    <TableColumn prefWidth="88.0" text="Course Name" />
-                                    <TableColumn prefWidth="123.0" text="Code" />
-                                    <TableColumn prefWidth="123.33331298828125" text="Instructor" />
-                                    <TableColumn prefWidth="111.0" text="Lab" />
-                                    <TableColumn prefWidth="109.0" text="Lecture" />
-                                    <TableColumn prefWidth="144.33331298828125" text="Tutorial" />
-                                    <TableColumn prefWidth="144.33331298828125" text="List of keywords" />
+                                    <TableColumn fx:id="courseName11" prefWidth="86.0" text="Course Name" />
+                                    <TableColumn fx:id="code11" prefWidth="60.33332824707031" text="Code" />
+                                    <TableColumn fx:id="instructor11" prefWidth="85.66667175292969" text="Instructor" />
+                                    <TableColumn fx:id="monday11" prefWidth="108.33334350585938" text="Monday" />
+                                    <TableColumn fx:id="tuesday11" prefWidth="80.33331298828125" text="Tuesday" />
+                                    <TableColumn fx:id="wednesday11" minWidth="8.333343505859375" prefWidth="91.66668701171875" text="Wednesday" />
+                                    <TableColumn fx:id="thursday11" prefWidth="105.0" text="Thursday" />
+                                    <TableColumn fx:id="friday11" prefWidth="96.0" text="Friday" />
+                                    <TableColumn fx:id="lab11" prefWidth="114.0" text="Lab" />
+                                    <TableColumn fx:id="tut11" prefWidth="109.0" text="Tutorial" />
                                  </columns>
-                                 <VBox.margin>
-                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                                 </VBox.margin>
                               </TableView>
-                              <Button mnemonicParsing="false" prefHeight="42.0" prefWidth="135.0" text="Add Course">
-                                 <font>
-                                    <Font size="13.0" />
-                                 </font>
-                                 <VBox.margin>
-                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                                 </VBox.margin>
-                              </Button>
-                              <Button mnemonicParsing="false" prefHeight="42.0" prefWidth="135.0" text="Remove Course">
-                                 <font>
-                                    <Font size="13.0" />
-                                 </font>
-                                 <VBox.margin>
-                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                                 </VBox.margin>
-                              </Button>
+                              <HBox prefHeight="64.0" prefWidth="960.0">
+                                 <children>
+                                    <TextField fx:id="courseByPostConditionCode" prefHeight="53.0" prefWidth="150.0" promptText="Enter CODE">
+                                       <HBox.margin>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                       </HBox.margin>
+                                    </TextField>
+                                    <Button mnemonicParsing="false" onAction="#courseByPostConditionAddCourse" prefHeight="57.0" prefWidth="174.0" text="Add Course">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                 </children>
+                              </HBox>
                            </children>
                         </VBox>
                      </children>
@@ -480,7 +468,7 @@
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <VBox prefHeight="479.0" prefWidth="960.0">
+                        <VBox prefHeight="688.0" prefWidth="960.0">
                            <children>
                               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Confirmed requests" wrappingWidth="298.13672828674316">
                                  <font>
