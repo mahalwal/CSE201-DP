@@ -92,7 +92,7 @@ public class Student extends newUser{
     
     public String onClickAddCourseFromPostConditionButtonFromStudent(Course courseToBeAdded){
         for (Course currentCourse : currentCourses) {
-            Time currentCourseTime = new Time(currentCourse.getTime(), "a");
+            Time currentCourseTime = new Time(currentCourse.time, "a");
             Time courseToBeAddedTime = new Time(email, email);
             if(currentCourseTime.checkClash(courseToBeAddedTime)){
                 return "Course clashed with " + currentCourse.getName();

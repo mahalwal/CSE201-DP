@@ -40,7 +40,7 @@ public class SignUpPopUpWindowController implements Initializable {
         String enteredOTP = otpfield.getText();
         if(LoginOverviewController.salt.equals(enteredOTP))
         {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("signUpPopUpWindow.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fillAllFields.fxml"));
             Parent root1 = (Parent) fxmlLoader.load();
             Stage stage = new Stage();
             stage.setScene(new Scene(root1));

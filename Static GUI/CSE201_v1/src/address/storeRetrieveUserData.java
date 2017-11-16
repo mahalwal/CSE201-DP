@@ -14,6 +14,7 @@ import java.io.ObjectOutputStream;
 import java.util.Iterator;
 import address.*;
 import java.util.ArrayList;
+//import org.apache.commons.lang3.*;
 
 /**
  *
@@ -44,6 +45,10 @@ public class storeRetrieveUserData {
                             while(true){
                                     try{
                                             MainApp.listOfUser = (ArrayList) in.readObject();
+                                            System.out.println("printing details of desearialized objec woooooooooooooooooooooooooooooooooooooooooooooooh----------------------------------");
+                                            System.out.println((ArrayList) in.readObject());
+                                            System.out.println("printing details of desearialized objec skdlajflllllllkalllllllllllllllllllllllllksadjflksdjflksjadlfkjasdlkfjlsdkfjlkdsjfl");
+//                                            MainApp.listOfUser = org.apache.commons.lang3.SerializationUtils.clone((ArrayList)in.readObject());
 //                                            newUser s1 = (newUser) in.readObject();
 //                                            MainApp.getListOfUser().add(s1);
                                     }

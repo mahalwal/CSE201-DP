@@ -28,19 +28,19 @@ public class Time {
     public boolean checkClash(Time check){
         int startHourFirst = Integer.parseInt(this.startTime.substring(0,2));
         int startMinuteFirst = Integer.parseInt(this.startTime.substring(2,4));
-        int startTimeFirst = startHourFirst + startMinuteFirst;
+        int startTimeFirst = startHourFirst*100 + startMinuteFirst;
         
         int endHourFirst = Integer.parseInt(this.endTime.substring(0,2));
         int endMinuteFirst = Integer.parseInt(this.endTime.substring(2,4));
-        int endTimeFirst = endHourFirst + endMinuteFirst;
+        int endTimeFirst = endHourFirst*100 + endMinuteFirst;
         
         int startHourSecond = Integer.parseInt(check.startTime.substring(0,2));
         int startMinuteSecond = Integer.parseInt(check.startTime.substring(2,4));
-        int startTimeSecond = startHourSecond + startMinuteSecond;
+        int startTimeSecond = startHourSecond*100 + startMinuteSecond;
         
         int endHourSecond = Integer.parseInt(check.endTime.substring(0,2));
         int endMinuteSecond = Integer.parseInt(check.endTime.substring(2,4));
-        int endTimeSecond = endHourSecond + endMinuteSecond;
+        int endTimeSecond = endHourSecond*100 + endMinuteSecond;
         
         if((startTimeSecond > startTimeFirst) && (startTimeSecond < endTimeFirst))
             return true;

@@ -61,9 +61,11 @@ public class LoginOverviewController {
 
     @FXML
     private void initialize() throws IOException, ClassNotFoundException{
-        storeRetrieveUserData storeRetrieveUserData1 = new storeRetrieveUserData();
-        storeRetrieveUserData1.desearialize("newuser"); 
+//        storeRetrieveUserData storeRetrieveUserData1 = new storeRetrieveUserData();
+        storeRetrieveUserData.desearialize("newuser");
         
+        if(MainApp.getListOfUser().isEmpty())
+            System.out.println("khaali hai bc");
         for(newUser u: MainApp.getListOfUser())
         {
             System.out.println(u);
@@ -90,13 +92,25 @@ public class LoginOverviewController {
             stage.setScene(new Scene(root1)); 
             stage.setResizable(false);
             stage.setTitle("User Not found");
-            stage.show();      
+            stage.show();
             return;
         }
-        
+        for(newUser u: MainApp.listOfUser){ 
+            if(u.username.equals(loginusername) && u.password.equals(loginpassword) && u.type.equals(currentChoiceBoxValue)){
+                System.out.println(u);
+                System.out.println(MainApp.currentUser);
+                MainApp.currentUser = u;
+                
+                System.out.println(MainApp.currentUser);
+//                MainApp.listOfUser.remove(1);
+                break;
+            }
+        }
         if(currentChoiceBoxValue.equals("Student"))
         {
+            System.out.println("herefffffffffffffffffffffffffffffffffffffffffffffffffffffff");
             AnchorPane pane = (AnchorPane)FXMLLoader.load(getClass().getResource("StudentLogin.fxml"));
+            System.out.println("adsffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
             loginRootPane.getChildren().setAll(pane);
         }
         else if(currentChoiceBoxValue.equals("Admin"))
@@ -109,6 +123,17 @@ public class LoginOverviewController {
             AnchorPane pane = (AnchorPane)FXMLLoader.load(getClass().getResource("FacultyLogin.fxml"));
             loginRootPane.getChildren().setAll(pane);
         }
+        System.out.println("yahan pe iski mc rahi hai");
+//        for(newUser u: MainApp.listOfUser){ 
+//            if(u.username.equals(loginusername) && u.password.equals(loginpassword) && u.type.equals(currentChoiceBoxValue)){
+//                System.out.println(u);
+//                System.out.println(MainApp.currentUser);
+//                MainApp.currentUser = u;
+//                System.out.println(MainApp.currentUser);
+////                MainApp.listOfUser.remove(1);
+//                break;
+//            }
+//        }
     }
 
     @FXML
@@ -117,7 +142,8 @@ public class LoginOverviewController {
         String to = "manish16054@iiitd.ac.in";
         String []toID = {to};
         salt = getSaltString();
-        mailAPI.sendFromGMail(toID, "OTP for sign up", "Please use this OTP:\n"+salt);
+        System.out.println(salt);
+//        mailAPI.sendFromGMail(toID, "OTP for sign up", "Please use this OTP:\n"+salt);
 //        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("signUpPopUpWindow.fxml"));
 //        Parent root1 = (Parent) fxmlLoader.load();
 //        Stage stage = new Stage();
@@ -139,7 +165,7 @@ public class LoginOverviewController {
             storeRetrieveUserData storeRetrieveUserData1 = new storeRetrieveUserData();
             MainApp.getListOfUser().add(newuser);
             storeRetrieveUserData1.serialize("newuser");
-
+            
 //            System.out.println("yaaaah");
             for(newUser u: MainApp.getListOfUser())
             {
@@ -186,7 +212,7 @@ public class LoginOverviewController {
         else{
             for(newUser u: MainApp.listOfUser){
                 if(u.username.equals(username1) && u.password.equals(password1) && u.type.equals(type1)){
-                    System.out.println("found");
+                    System.out.println("found"+u);
                     return true;
                 }
             }

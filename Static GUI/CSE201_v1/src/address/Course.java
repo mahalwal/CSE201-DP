@@ -5,14 +5,15 @@
  */
 package address;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  *
  * @author Madhav
  */
-public class Course {
-    public String name,room,time, acronym, instructor, mandatoryElective, credits, code, monday, tuesday, wednesday, thurdsday, friday, tut, lab, preConditions, postConditions;
+public class Course implements Cloneable, Serializable{
+    public String time, name, acronym, instructor, mandatoryElective, credits, code, monday, tuesday, wednesday, thurdsday, friday, tut, lab, preConditions, postConditions;
     //room to be addded
 //    private DetailsOfCourse CourseDetails;
 //    private ArrayList<String> postConditions;
@@ -21,7 +22,6 @@ public class Course {
 
     public Course(String mandatoryElective, String name, String code, String instructor, String credits, String acronym, String monday, String tuesday, String wednesday, String thurdsday, String friday, String tut, String lab, String preConditions, String postConditions) {
         this.name = name;
-        this.time = time;
         this.acronym = acronym;
         this.instructor = instructor;
         this.mandatoryElective = mandatoryElective;
@@ -36,6 +36,14 @@ public class Course {
         this.lab = lab;
         this.preConditions = preConditions;
         this.postConditions = postConditions;
+    }
+    public Course clone(){
+        try{
+            Course copy = (Course)super.clone();
+            return copy;
+        }catch(Exception e){
+            return null;
+        }
     }
 
     public String getMandatoryElective() {
@@ -138,10 +146,6 @@ public class Course {
         this.name = name;
     }
 
-    public void setTime(String time) {
-        this.time = time;
-    }
-
     public void setAcronym(String acronym) {
         this.acronym = acronym;
     }
@@ -154,9 +158,7 @@ public class Course {
         return name;
     }
 
-    public String getTime() {
-        return time;
-    }
+
 
     public String getAcronym() {
         return acronym;
@@ -168,6 +170,8 @@ public class Course {
 
     @Override
     public String toString() {
-        return "Course{" + "name=" + name + ", time=" + time + ", acronym=" + acronym + ", instructor=" + instructor + ", mandatoryElective=" + mandatoryElective + ", credits=" + credits + ", code=" + code + ", monday=" + monday + ", tuesday=" + tuesday + ", wednesday=" + wednesday + ", thurdsday=" + thurdsday + ", friday=" + friday + ", tut=" + tut + ", lab=" + lab + ", preConditions=" + preConditions + ", postConditions=" + postConditions + '}';
+        return "Course{" + "name=" + name + ", acronym=" + acronym + ", instructor=" + instructor + ", mandatoryElective=" + mandatoryElective + ", credits=" + credits + ", code=" + code + ", monday=" + monday + ", tuesday=" + tuesday + ", wednesday=" + wednesday + ", thurdsday=" + thurdsday + ", friday=" + friday + ", tut=" + tut + ", lab=" + lab + ", preConditions=" + preConditions + ", postConditions=" + postConditions + '}';
     }
+
+
 }

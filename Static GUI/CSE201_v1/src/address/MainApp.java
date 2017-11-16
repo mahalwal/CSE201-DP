@@ -13,6 +13,7 @@ import javafx.stage.Stage;
 public class MainApp extends Application {
 
     
+    public static newUser currentUser;
     public static ArrayList<newUser> listOfUser;
     private Stage primaryStage;
 

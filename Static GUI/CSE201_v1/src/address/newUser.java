@@ -13,8 +13,10 @@ import java.util.Objects;
  *
  * @author Mahalwal's
  */
-public class newUser implements Serializable{
+public class newUser implements Serializable, Cloneable{
     public String username, fullname, password, repassword, email, type;
+    public ArrayList<Course> allTempStudentCoursesArrayList = new ArrayList<Course>(); //for remaining courses which student hasnt chosen
+    public ArrayList<Course> currentStudentCourses = new ArrayList<Course>();
     
     public newUser(String username, String fullname, String email, String password, String repassword, String type) {
         this.username = username;
@@ -24,11 +26,29 @@ public class newUser implements Serializable{
         this.email = email;
         this.type = type;
     }
+    public newUser clone() throws CloneNotSupportedException{
+        try{
+            newUser copy = (newUser) super.clone();
+            copy.allTempStudentCoursesArrayList = allTempStudentCoursesArrayList;//new ArrayList<Course>(allTempStudentCoursesArrayList);
+            copy.currentStudentCourses = currentStudentCourses;//new ArrayList<Course>(currentStudentCourses);
+            return copy;
+        }catch(CloneNotSupportedException e){
+            return null;
+        }
+    }
+
+//    public newUser() {
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//    }
 
     @Override
     public String toString() {
-        return "newUser{" + "username=" + username + ", fullname=" + fullname + ", password=" + password + ", repassword=" + repassword + ", email=" + email + ", type=" + type + '}';
+        return "newUser{" + "username=" + username + ", fullname=" + fullname + ", password=" + password + ", repassword=" + repassword + ", email=" + email + ", type=" + type + ", allTempStudentCoursesArrayList=" +  ", currentStudentCourses=" + currentStudentCourses + '}';
     }
+    
+
+
+
 
     @Override
     public boolean equals(Object obj) {
